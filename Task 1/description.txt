@@ -1,0 +1,4 @@
+In simpler terms,
+using -O1 generates code that is good enough for most scenarios, offering a balance between performance and ease of understanding. It is like tuning a car to run efficiently without focusing on getting the absolute best speed. On the other hand, -Ofast is like fine-tuning the car for maximum speed, possibly at the expense of comfort or reliability. It’s faster but more difficult to adjust or understand.
+
+So, if you want more control and clarity, go with -O1; but if speed is your ultimate goal, -Ofast is the way to go
