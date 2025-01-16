@@ -62,5 +62,79 @@
 
 ---
 
+## Task 3 - Instruction Set Description
+
+### List of Commands
+
+1. **`lui`**  
+   - **Description**: Load Upper Immediate. Loads a 20-bit immediate into the upper 20 bits of a register.  
+   - **Usage**: Used for addressing and initializing high-order bits.  
+
+2. **`addi`**  
+   - **Description**: Add Immediate. Adds a sign-extended 12-bit immediate to a register value.  
+   - **Usage**: Used for constant additions.  
+
+3. **`li`**  
+   - **Description**: Load Immediate. Loads a constant value into a register.  
+   - **Usage**: Simplifies loading constants.  
+
+4. **`sd`**  
+   - **Description**: Store Doubleword. Stores a 64-bit value from a register to memory.  
+   - **Usage**: Transfers data from register to memory.  
+
+5. **`jal`**  
+   - **Description**: Jump and Link. Used to jump to a target address and save the return address in a register.  
+   - **Usage**: Primarily for function calls.  
+
+6. **`ret`**  
+   - **Description**: Return. Returns control to the address stored in the return address register.  
+   - **Usage**: Used at the end of a function.  
+
+7. **`ld`**  
+   - **Description**: Load Doubleword. Loads a 64-bit value from memory into a register.  
+   - **Usage**: Transfers data from memory to register.  
+
+8. **`auipc`**  
+   - **Description**: Add Upper Immediate to PC. Adds a 20-bit upper immediate to the program counter.  
+   - **Usage**: Often used for position-independent code.  
+
+9. **`beqz`**  
+   - **Description**: Branch if Equal to Zero. Branches to a target address if the register value is zero.  
+   - **Usage**: Implements conditional branching.  
+
+10. **`j`**  
+    - **Description**: Unconditional Jump. Jumps directly to a target address.  
+    - **Usage**: Used for unconditional control flow changes.  
+
+11. **`sub`**  
+    - **Description**: Subtract. Subtracts one register value from another.  
+    - **Usage**: Used for arithmetic operations.  
+
+12. **`lbu`**  
+    - **Description**: Load Byte Unsigned. Loads an unsigned byte from memory into a register.  
+    - **Usage**: For working with byte-sized data.  
+
+13. **`bnez`**  
+    - **Description**: Branch if Not Equal to Zero. Branches if the register value is not zero.  
+    - **Usage**: Implements conditional branching.  
+
+14. **`sb`**  
+    - **Description**: Store Byte. Stores the lower 8 bits of a register to memory.  
+    - **Usage**: Transfers byte-sized data to memory.  
+
+15. **`jr`**  
+    - **Description**: Jump Register. Jumps to the address contained in a register.  
+    - **Usage**: Used for indirect control flow.  
+
+16. **`mv`**  
+    - **Description**: Move. Copies the value from one register to another.  
+    - **Usage**: For data transfer between registers.  
+
+17. **`jalr`**  
+    - **Description**: Jump and Link Register. Jumps to an address in a register and saves the return address.  
+    - **Usage**: Primarily for indirect function calls.  
+
+---
+
 
 
