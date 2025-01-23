@@ -136,5 +136,55 @@
 
 ---
 
+## Task 4: Functional Simulation of RISC-V Core
 
+### Objective
+Perform a functional simulation of the RISC-V Core Verilog netlist using a comprehensive testbench.
 
+### Environment Setup
+- **Simulation Tools**: 
+  - Icarus Verilog (iverilog)
+  - GTKWave
+- **Platform**: Linux/Ubuntu
+
+### Simulation Procedure
+1. **File Preparation**
+   - Downloaded RISC-V Core Verilog Netlist
+   - Obtained corresponding Testbench
+
+2. **Compilation Commands**
+   ```bash
+   iverilog -o simulation netlist.v testbench.v
+   ./simulation
+   gtkwave waveform.vcd
+   ```
+
+### Simulation Results
+- Verified functional correctness of RISC-V Core
+- Generated and analyzed waveform signals
+- Confirmed expected behavior across test scenarios
+
+### Key Observations
+- Successful execution of core instructions
+- Accurate signal propagation
+- Matched design specifications
+
+### Repository Contents
+- Verilog Netlist
+- Testbench File
+- Simulation Waveforms
+- Simulation Log
+
+### Learning Outcomes
+- Advanced RISC-V core simulation techniques
+- Practical experience with hardware verification
+- Deepened understanding of Verilog simulation workflow
+
+### Challenges Addressed
+- Ensuring precise testbench configuration
+- Interpreting waveform signals accurately
+
+### Conclusion
+Completed comprehensive functional simulation of RISC-V Core, demonstrating core operational integrity.
+
+---
