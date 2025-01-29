@@ -1,5 +1,4 @@
-## 
-**Samsung RISC-V Internship by VSD**  
+# Samsung RISC-V Internship by VSD
 
 ---
 
@@ -159,32 +158,91 @@ Perform a functional simulation of the RISC-V Core Verilog netlist using a compr
    gtkwave waveform.vcd
    ```
 
-### Simulation Results
-- Verified functional correctness of RISC-V Core
-- Generated and analyzed waveform signals
-- Confirmed expected behavior across test scenarios
-
-### Key Observations
-- Successful execution of core instructions
-- Accurate signal propagation
-- Matched design specifications
-
-### Repository Contents
-- Verilog Netlist
-- Testbench File
-- Simulation Waveforms
-- Simulation Log
-
-### Learning Outcomes
-- Advanced RISC-V core simulation techniques
-- Practical experience with hardware verification
-- Deepened understanding of Verilog simulation workflow
-
-### Challenges Addressed
-- Ensuring precise testbench configuration
-- Interpreting waveform signals accurately
-
-### Conclusion
-Completed comprehensive functional simulation of RISC-V Core, demonstrating core operational integrity.
-
 ---
+
+## Task 5: Radar System for Threat Detection
+
+### Project Overview
+A surveillance system utilizing an ultrasonic sensor (HC-SR04) and VSD Squadron to detect potential threats within a specified range. The system provides visual feedback through LED indicators for threat detection status.
+
+### Block Diagram
+```mermaid
+graph TD
+    PS[Power Supply 5V] --> VS[VSD Squadron]
+    PS --> US[Ultrasonic Sensor HC-SR04]
+    
+    subgraph Sensor_Module
+        US -->|Echo Pin D4| VS
+        VS -->|Trigger Pin D3| US
+    end
+    
+    subgraph Processing_Unit
+        VS -->|Process Distance Data| DL[Distance Logic]
+        DL -->|Compare with Threshold| TD[Threat Detection]
+    end
+    
+    subgraph Output_Indicators
+        TD -->|No Threat| GL[Green LED D6]
+        TD -->|Threat Detected| RL[Red LED D5]
+    end
+    
+    style PS fill:#f9f,stroke:#333,stroke-width:2px
+    style VS fill:#bbf,stroke:#333,stroke-width:2px
+    style US fill:#dfd,stroke:#333,stroke-width:2px
+```
+
+### Components Required
+- Ultrasonic Sensor (HC-SR04)
+- VSD Squadron
+- Red LED (Threat indicator)
+- Green LED (Clear indicator)
+- Resistors
+- Jumper Wires
+- Breadboard
+- Power Supply (5V)
+- Arduino/MCU (Optional)
+- Power Source (Battery or USB)
+
+### Circuit Connections
+#### Ultrasonic Sensor (HC-SR04) Pinout
+- VCC → VIN (Power)
+- Trig → D3 (Trigger pin)
+- Echo → D4 (Echo signal pin)
+- GND → GND (Ground)
+
+#### LED Connections
+- **Red LED (Detection Alert)**
+  - Anode (+) → D5
+  - Cathode (-) → GND (via resistor)
+- **Green LED (No Obstacle)**
+  - Anode (+) → D6
+  - Cathode (-) → GND (via resistor)
+
+### Pin Details
+
+| Component | Pin Type | Pin Name | Connection Details |
+|-----------|----------|----------|-------------------|
+| Ultrasonic Sensor | VCC | VIN | Powered by VSD Squadron VIN pin |
+| Ultrasonic Sensor | Trig | D3 | Trigger pin for sensor measurement |
+| Ultrasonic Sensor | Echo | D4 | Echo pin for distance reading |
+| Red LED | Anode | D5 | Digital pin with resistor |
+| Green LED | Anode | D6 | Digital pin with resistor |
+| Red LED | Cathode | GND | Ground through resistor |
+| Green LED | Cathode | GND | Ground through resistor |
+
+### Functionality
+- Ultrasonic sensor emits pulse via Trig pin
+- Echo pin receives reflected pulse for distance calculation
+- Red LED activates when object detected within threshold
+- Green LED indicates clear status when no threats detected
+
+### Usage Instructions
+1. Assemble circuit components according to connection diagram
+2. Upload program code to VSD Squadron/microcontroller
+3. Power up the system
+4. System automatically begins threat detection:
+   - Red LED: Threat detected within range
+   - Green LED: No threats detected
+
+### Reference
+Refer to the Smart Door Example for guidance on sensor integration and VSD Squadron configuration for real-time object detection systems.

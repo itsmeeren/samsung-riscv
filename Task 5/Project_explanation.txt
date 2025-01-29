@@ -1,0 +1,74 @@
+Radar System for Threat Detection Using Ultrasonic Sensor and VSD Squadron
+
+Project Overview:
+
+The Radar System for Threat Detection utilizes an ultrasonic sensor (HC-SR04) and the VSD Squadron to detect objects within a specified range. 
+The system is designed to identify potential threats by measuring the distance to an object. If an object is detected within the threshold range, 
+a red LED will turn on to signal the presence of a threat. If no object is detected, a green LED will be lit, indicating the system is operating 
+normally without any threats.
+
+The system uses a VSD Squadron to manage the sensor readings and control the LED indicators. The project is intended for use in surveillance or
+security applications where monitoring and detecting intrusions or obstacles is critical.
+Components Required:
+
+    Ultrasonic Sensor (HC-SR04) - For distance measurement to detect objects.
+    VSD Squadron - To process sensor data and control LED outputs.
+    Red LED - To signal when a threat is detected.
+    Green LED - To signal when no threat is detected.
+    Resistors - To limit current and protect the LEDs.
+    Jumper Wires - For connections between components.
+    Breadboard - To assemble the circuit without soldering.
+    Power Supply - To power the components (typically 5V).
+    Arduino/MCU (Optional) - If you want to use a microcontroller for additional logic.
+    Power Source (Battery or USB) - To power the entire system.
+    
+    
+Circuit Connections:
+
+
+
+    Ultrasonic Sensor (HC-SR04) Pinout:
+        VCC → VIN (Power)
+        Trig → D3 (Trigger pin)
+        Echo → D4 (Echo signal pin)
+        GND → GND (Ground)
+
+    LED Connections:
+        Red LED (Detection Alert):
+            Anode (+) → D5 (Digital pin controlling the red LED)
+            Cathode (-) → GND (Ground through a current-limiting resistor)
+        Green LED (No Obstacle):
+            Anode (+) → D6 (Digital pin controlling the green LED)
+            Cathode (-) → GND (Ground through a current-limiting resistor)
+
+Pin Details:
+Component		Pin Type	Pin Name	Connection Details
+
+Ultrasonic Sensor	VCC		VIN		Powered by VSD Squadron VIN pin
+Ultrasonic Sensor	Trig		D3		Trigger pin to initiate sensor measurement
+Ultrasonic Sensor	Echo		D4		Echo pin to receive distance reading
+Red LED			Anode		D5		Digital pin controlling red LED (connected with resistor)
+Green LED		Anode		D6		Digital pin controlling green LED (connected with resistor)
+Red LED			Cathode		GND		Ground connection through resistor
+Green LED		Cathode		GND		Ground connection through resistor
+
+
+
+Functionality:
+
+    The ultrasonic sensor sends out a pulse (via the Trig pin) and waits for the reflected pulse on the Echo pin.
+    Based on the time it takes for the pulse to return, the distance is calculated.
+    If the distance is less than the specified threshold (indicating a potential threat), the system turns on the Red LED.
+    If no object is detected within the threshold, the Green LED will remain on, indicating that the area is clear.
+
+How to Use:
+
+    Assemble the components as per the circuit connections.
+    Upload the code to the VSD Squadron or the microcontroller 
+    Power the system on.
+    The system will begin scanning for objects. If an object is detected within the threshold range, the red LED will turn on. If no object is within range, the green LED will stay on.
+
+Reference:
+
+For guidance on building similar systems, you can refer to the Smart Door Example for understanding the workflow and design elements. This example will help with sensor integration and setting up the VSD Squadron for handling real-time object detection.
+
